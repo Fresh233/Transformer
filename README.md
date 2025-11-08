@@ -178,6 +178,7 @@ dropout: 0.1
 ## 硬件要求
 
 - **GPU**: 必须使用支持 CUDA 的 NVIDIA GPU。
-- **实验环境**: 所有实验均在单张 **NVIDIA Tesla T4 (16GB VRAM)** 上完成。
+- **实验环境**: 所有实验均在单张 NVIDIA GeForce RTX 3050Ti Laptop GPU 上完成。
 
 - **最低要求**: 推荐使用至少有 **6GB VRAM** 的 NVIDIA GPU 以确保训练顺利进行。
+
