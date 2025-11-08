@@ -92,7 +92,7 @@ chmod +x scripts/run.sh
 
 **预期行为**:
 - 脚本会自动安装 `requirements.txt` 中的依赖（如果尚未安装）。
-- 程序将开始运行，自动下载 IWSLT2017 数据集（至 `./dataset_cache`），并训练分词器（至 `./tokenizers`）。
+- 程序将开始运行，自动下载 IWSLT2017 数据集（至 `./dataset`），并训练分词器（至 `./tokenizers`）。
 - 训练过程的日志将打印在终端上，包括每个 epoch 的训练和验证损失。
 - 训练结束后，性能最佳的模型权重将保存为 `best_model.pth`，损失曲线图将保存至 `results/loss_curve.png`。
 
@@ -179,4 +179,5 @@ dropout: 0.1
 
 - **GPU**: 必须使用支持 CUDA 的 NVIDIA GPU。
 - **实验环境**: 所有实验均在单张 **NVIDIA Tesla T4 (16GB VRAM)** 上完成。
+
 - **最低要求**: 推荐使用至少有 **6GB VRAM** 的 NVIDIA GPU 以确保训练顺利进行。
