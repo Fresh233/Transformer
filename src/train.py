@@ -18,7 +18,7 @@ from tokenizers.pre_tokenizers import Whitespace
 from model import Transformer, ModelArgs
 
 
-# --- 数据集类 (无变动) ---
+# --- 数据集类 ---
 class BilingualDataset(Dataset):
     def __init__(self, ds, tokenizer_src, tokenizer_tgt, src_lang, tgt_lang, max_seq_len):
         super().__init__()
@@ -83,9 +83,9 @@ def causal_mask(size):
     return mask == 0
 
 
-# --- Tokenizer 训练 (已修改) ---
+# --- Tokenizer 训练 ---
 def get_or_build_tokenizer(config, ds, lang):
-    # 修改(1): 从配置文件读取分词器保存路径
+    # 从配置文件读取分词器保存路径
     tokenizer_dir = Path(config['tokenizer_path'])
     tokenizer_dir.mkdir(parents=True, exist_ok=True)
     tokenizer_path = tokenizer_dir / f"tokenizer_{lang}.json"
@@ -109,7 +109,7 @@ def get_or_build_tokenizer(config, ds, lang):
     return tokenizer
 
 
-# --- 训练和验证 (无变动) ---
+# --- 训练和验证 ---
 def train_epoch(model, loader, optimizer, criterion, device):
     model.train()
     total_loss = 0
@@ -168,7 +168,7 @@ def main():
     torch.manual_seed(config['seed'])
 
     # --- 数据加载和预处理 ---
-    # 修改(2): 在加载数据集时，指定 cache_dir
+    # 在加载数据集时，指定 cache_dir
     print(f"Loading dataset... This will download to '{config['data_cache_dir']}'")
     raw_datasets = load_dataset(
         'iwslt2017',
@@ -217,7 +217,7 @@ def main():
     val_losses = []
     best_val_loss = float('inf')
 
-    # 修改(3): 确保 results 目录存在
+    # 确保 results 目录存在
     Path("results").mkdir(exist_ok=True)
 
     for epoch in range(config['epochs']):
