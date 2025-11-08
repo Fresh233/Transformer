@@ -1,0 +1,24 @@
+# --- Paths ---
+# 定义数据集下载和缓存的位置
+data_cache_dir: "./dataset"
+# 定义分词器模型保存的位置
+tokenizer_path: "./tokenizers"
+
+# --- Dataset & Tokenizer ---
+src_lang: "de"
+tgt_lang: "en"
+vocab_size: 20000
+
+# --- Model Hyperparameters ---
+dim: 256
+n_embd: 256
+n_layer: 4
+n_heads: 4    # 测试多头注意力机制，默认为4
+dropout: 0.1
+max_seq_len: 100
+
+# --- Training Hyperparameters ---
+seed: 42
+batch_size: 32
+epochs: 20
+learning_rate: 0.0003
