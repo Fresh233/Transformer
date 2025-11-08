@@ -19,7 +19,7 @@
 ## 项目结构
 
 ```
-transformer_project/
+transformer/
 |-- src/                # 核心源代码
 |   |-- model.py        # Transformer 模型定义
 |   `-- train.py        # 训练、验证与评估脚本
@@ -181,4 +181,5 @@ dropout: 0.1
 - **实验环境**: 所有实验均在单张 NVIDIA GeForce RTX 3050Ti Laptop GPU 上完成。
 
 - **最低要求**: 推荐使用至少有 **6GB VRAM** 的 NVIDIA GPU 以确保训练顺利进行。
+
 
